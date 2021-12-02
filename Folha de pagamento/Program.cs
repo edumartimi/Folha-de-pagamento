@@ -6,6 +6,7 @@ namespace Folha_de_pagamento
     {
         static void Main(string[] args)
         {
+            //criando as variaveis
             string strqtdfunc;
             string nome;
             string qtdhoras;
@@ -14,16 +15,19 @@ namespace Folha_de_pagamento
             int qtdfunc;
             float valortotal;
 
-            
+            //pedindo para o usuario colocar quantos funcionarios deseja cadastrar
             Console.WriteLine("Digite a quantidade de funcionarios desejados");
             strqtdfunc = Console.ReadLine();
             qtdfunc = int.Parse(strqtdfunc);
 
+            //criando arrays para colocar cada dado dos funcionarios individualmente
             string[] nomefuncionarios = new string[qtdfunc];
             string[] horafuncionarios = new string[qtdfunc];
             string[] valorfuncionarios = new string[qtdfunc];
             string[] tercerisadofuncionarios = new string[qtdfunc];
             
+            
+            //percorrendo os arrays e associando os valores para cada funcionario
             for (int i = 0; i< qtdfunc; i++) 
             {
                 Console.WriteLine("qual o nome do funcionario?");
@@ -45,8 +49,10 @@ namespace Folha_de_pagamento
 
             }
 
+            //percorrendo novamente os arrays, só que dessa vez com eles preenchidos para passar os valores para o usuario
             for (int i = 0; i < qtdfunc; i++) 
             {
+                //fazendo o calculo do pagamento dos funcionarios de acordo com as horas trabalhadas, valor da horas, tercerização
                 valortotal = 0;
                 if (tercerisadofuncionarios[i] == "N")
                 {
